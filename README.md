@@ -1,6 +1,6 @@
-#### 停更说明
+#### 说明
 
->由于作者工作时间的问题，目前作者已经暂时停止维护AvoidCrash,已经有多个系统版本没有兼容,大家可以根据自己项目所需要进行改造。
+>由于原作者不再维护, 自己维护一下
 
 
 
@@ -91,7 +91,7 @@ AvoidCrash简介
 ### From CocoaPods【使用CocoaPods】
 
 ```ruby
-pod 'AvoidCrash', '~> 2.5.2'
+pod 'AvoidCrash', :git => 'https://github.com/waiting0902/AvoidCrash.git'
 ```
 
 ### Manually【手动导入】
