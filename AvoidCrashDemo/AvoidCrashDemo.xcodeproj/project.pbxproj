@@ -28,6 +28,8 @@
 		F61CF29C1FF2206D006093D9 /* AvoidCrashPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F61CF29B1FF2206D006093D9 /* AvoidCrashPerson.m */; };
 		F63018CE1F22EFA000F176DF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F63018CD1F22EFA000F176DF /* Person.m */; };
 		F6EBB7B51F271CCB00ED3B15 /* AvoidCrashStubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EBB7B41F271CCB00ED3B15 /* AvoidCrashStubProxy.m */; };
+		F874870D280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = F874870C280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.m */; };
+		F8748710280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = F874870F280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		F63018D21F23153A00F176DF /* AvoidCrashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvoidCrashProtocol.h; sourceTree = "<group>"; };
 		F6EBB7B31F271CCB00ED3B15 /* AvoidCrashStubProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvoidCrashStubProxy.h; sourceTree = "<group>"; };
 		F6EBB7B41F271CCB00ED3B15 /* AvoidCrashStubProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvoidCrashStubProxy.m; sourceTree = "<group>"; };
+		F874870B280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSKeyedUnarchiver+AvoidCrash.h"; sourceTree = "<group>"; };
+		F874870C280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSKeyedUnarchiver+AvoidCrash.m"; sourceTree = "<group>"; };
+		F874870E280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSKeyedArchiver+AvoidCrash.h"; sourceTree = "<group>"; };
+		F874870F280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSKeyedArchiver+AvoidCrash.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,10 @@
 				04FB61D81DB2361400C079F2 /* NSAttributedString+AvoidCrash.m */,
 				04FB61DA1DB25FE500C079F2 /* NSMutableAttributedString+AvoidCrash.h */,
 				04FB61DB1DB25FE500C079F2 /* NSMutableAttributedString+AvoidCrash.m */,
+				F874870E280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.h */,
+				F874870F280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.m */,
+				F874870B280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.h */,
+				F874870C280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.m */,
 			);
 			name = AvoidCrash;
 			path = ../../AvoidCrash;
@@ -301,6 +311,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -348,10 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F874870D280FB1C6004DE847 /* NSKeyedUnarchiver+AvoidCrash.m in Sources */,
 				043C64221D93A60C00A0B0E9 /* NSDictionary+AvoidCrash.m in Sources */,
 				043C64211D93A60C00A0B0E9 /* NSArray+AvoidCrash.m in Sources */,
 				043C63EA1D938EE100A0B0E9 /* ViewController.m in Sources */,
 				F6EBB7B51F271CCB00ED3B15 /* AvoidCrashStubProxy.m in Sources */,
+				F8748710280FB7F9004DE847 /* NSKeyedArchiver+AvoidCrash.m in Sources */,
 				043C63E71D938EE100A0B0E9 /* AppDelegate.m in Sources */,
 				043C63E41D938EE100A0B0E9 /* main.m in Sources */,
 				040330221DACD96E00AE5A41 /* NSObject+AvoidCrash.m in Sources */,

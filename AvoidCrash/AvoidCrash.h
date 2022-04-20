@@ -29,6 +29,9 @@
 #import "NSAttributedString+AvoidCrash.h"
 #import "NSMutableAttributedString+AvoidCrash.h"
 
+#import "NSKeyedUnarchiver+AvoidCrash.h"
+#import "NSKeyedArchiver+AvoidCrash.h"
+
 //define
 #import "AvoidCrashStubProxy.h"
 

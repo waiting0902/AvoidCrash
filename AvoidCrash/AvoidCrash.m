@@ -48,6 +48,9 @@
         
         [NSAttributedString avoidCrashExchangeMethod];
         [NSMutableAttributedString avoidCrashExchangeMethod];
+        
+        [NSKeyedUnarchiver avoidCrashExchangeMethod];
+        [NSKeyedArchiver avoidCrashExchangeMethod];
     });
 }
 

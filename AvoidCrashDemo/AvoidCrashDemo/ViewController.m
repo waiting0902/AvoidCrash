@@ -368,6 +368,29 @@
 }
 
 //=================================================================
+//                            NSKeyedArchiver
+//=================================================================
+#pragma mark - NSKeyedArchiver
+- (void)NSKeyedArchiver_Test_archivedDataWithRootObject {
+    Person *p = [Person new];
+    [NSKeyedArchiver archivedDataWithRootObject:p];
+}
+
+
+//=================================================================
+//                            NSKeyedUnarchiver
+//=================================================================
+#pragma mark - NSKeyedUnarchiver
+- (void)NSKeyedUnarchiver_Test_unarchiveObjectWithFile {
+
+}
+
+- (void)NSKeyedUnarchiver_Test_unarchiveObjectWithData {
+ 
+}
+
+
+//=================================================================
 //                      执行所有test的方法
 //=================================================================
 #pragma mark - 执行所有test的方法
@@ -423,6 +446,11 @@
     
     [self testNoSelectorCrash];
     [self testNoSelectorCrash2];
+    
+    [self NSKeyedArchiver_Test_archivedDataWithRootObject];
+    
+    [self NSKeyedUnarchiver_Test_unarchiveObjectWithFile];
+    [self NSKeyedUnarchiver_Test_unarchiveObjectWithData];
 }
 
 
