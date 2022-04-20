@@ -68,6 +68,10 @@
     
 }
 
+- (void)NSArray_Test_arrayWithArray {
+    id obj = @"";
+    [NSArray arrayWithArray:obj];
+}
 
 //=================================================================
 //                       NSMutableArray_Test
@@ -117,6 +121,13 @@
     
     [array getObjects:cArray range:range];
 }
+
+- (void)NSMutableArray_Test_removeObjectsAtIndexes {
+    NSMutableArray *array = @[@"chenfanfang", @"iOSDeveloper"].mutableCopy;
+    NSIndexSet *set = [NSIndexSet indexSetWithIndex:2];
+   [array removeObjectsAtIndexes:set];
+}
+
 
 //=================================================================
 //                       NSDictionary_Test
@@ -366,6 +377,7 @@
     [self NSArray_Test_ObjectAtIndex];
     [self NSArray_Test_objectsAtIndexes];
     [self NSArray_Test_getObjectsRange];
+    [self NSArray_Test_arrayWithArray];
     
     
     [self NSMutableArray_Test_ObjectAtIndex];

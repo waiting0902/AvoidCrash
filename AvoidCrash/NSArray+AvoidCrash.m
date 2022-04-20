@@ -265,7 +265,7 @@
         arr = [self avoidCrashArrayWithArray:array];
     } @catch (NSException *exception) {
         arr = [NSMutableArray array];
-        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultReturnNil];
+        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
         
     } @finally {
         
