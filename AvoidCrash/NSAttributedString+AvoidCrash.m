@@ -27,6 +27,9 @@
         
         //initWithString:attributes:
         [AvoidCrash exchangeInstanceMethod:NSConcreteAttributedString method1Sel:@selector(initWithString:attributes:) method2Sel:@selector(avoidCrashInitWithString:attributes:)];
+        
+        //attribute: atIndex: longestEffectiveRange: inRange:
+        [AvoidCrash exchangeInstanceMethod:NSConcreteAttributedString method1Sel:@selector(attribute:atIndex:longestEffectiveRange:inRange:) method2Sel:@selector(avoidCrashAttribute:atIndex:longestEffectiveRange:inRange:)];
     });
 
 }
@@ -86,6 +89,26 @@
     }
     @catch (NSException *exception) {
         NSString *defaultToDo = AvoidCrashDefaultReturnNil;
+        [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
+    }
+    @finally {
+        return object;
+    }
+}
+
+//=================================================================
+//     attribute: atIndex: longestEffectiveRange: inRange:
+//=================================================================
+#pragma mark - attribute: atIndex: longestEffectiveRange: inRange:
+
+- (nullable id)avoidCrashAttribute:(NSAttributedStringKey)attrName atIndex:(NSUInteger)location longestEffectiveRange:(nullable NSRangePointer)range inRange:(NSRange)rangeLimit {
+    id object = nil;
+    
+    @try {
+        object = [self avoidCrashAttribute:attrName atIndex:location longestEffectiveRange:range inRange:rangeLimit];
+    }
+    @catch (NSException *exception) {
+        NSString *defaultToDo = AvoidCrashDefaultIgnore;
         [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
     }
     @finally {

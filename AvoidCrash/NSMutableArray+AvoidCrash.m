@@ -41,6 +41,13 @@
         
         //getObjects:range:
         [AvoidCrash exchangeInstanceMethod:arrayMClass method1Sel:@selector(getObjects:range:) method2Sel:@selector(avoidCrashGetObjects:range:)];
+        
+        //addObjectsFromArray:
+        [AvoidCrash exchangeInstanceMethod:arrayMClass method1Sel:@selector(addObjectsFromArray:) method2Sel:@selector(avoidCrashAddObjectsFromArray:)];
+        
+        //removeObjectsAtIndexes:
+        [AvoidCrash exchangeInstanceMethod:arrayMClass method1Sel:@selector(removeObjectsAtIndexes:) method2Sel:@selector(avoidCrashRemoveObjectsAtIndexes:)];
+        
     });
     
     
@@ -163,7 +170,41 @@
     }
 }
 
+//=================================================================
+//                         addObjectsFromArray:
+//=================================================================
+#pragma mark - getObjects:range:
 
+- (void)avoidCrashAddObjectsFromArray:(NSArray *)otherArray {
+    
+    @try {
+        [self avoidCrashAddObjectsFromArray:otherArray];
+    } @catch (NSException *exception) {
+        NSString *defaultToDo = AvoidCrashDefaultIgnore;
+        [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
+        
+    } @finally {
+        
+    }
+}
+
+
+//=================================================================
+//                    removeObjectAtIndex:
+//=================================================================
+#pragma mark - removeObjectAtIndex:
+
+- (void)avoidCrashRemoveObjectsAtIndexes:(NSIndexSet *)indexes {
+    @try {
+        [self avoidCrashRemoveObjectsAtIndexes:indexes];
+    }
+    @catch (NSException *exception) {
+        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
+    }
+    @finally {
+        
+    }
+}
 
 
 @end

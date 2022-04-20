@@ -60,6 +60,9 @@
         [AvoidCrash exchangeInstanceMethod:__NSSingleObjectArrayI method1Sel:@selector(getObjects:range:) method2Sel:@selector(__NSSingleObjectArrayIAvoidCrashGetObjects:range:)];
         
         [AvoidCrash exchangeInstanceMethod:__NSArrayI method1Sel:@selector(getObjects:range:) method2Sel:@selector(__NSArrayIAvoidCrashGetObjects:range:)];
+        
+        //arrayWithArray:
+        [AvoidCrash exchangeClassMethod:__NSArray method1Sel:@selector(arrayWithArray:) method2Sel:@selector(avoidCrashArrayWithArray:)];
     });
     
     
@@ -252,7 +255,23 @@
     }
 }
 
-
+//=================================================================
+//                           arrayWithArray:
+//=================================================================
+#pragma mark - arrayWithArray:
++ (instancetype)avoidCrashArrayWithArray:(NSArray *)array {
+    id arr;
+    @try {
+        arr = [self avoidCrashArrayWithArray:array];
+    } @catch (NSException *exception) {
+        arr = [NSMutableArray array];
+        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultReturnNil];
+        
+    } @finally {
+        
+    }
+    return arr;
+}
 
 
 @end
