@@ -48,6 +48,9 @@
         //removeObjectsAtIndexes:
         [AvoidCrash exchangeInstanceMethod:arrayMClass method1Sel:@selector(removeObjectsAtIndexes:) method2Sel:@selector(avoidCrashRemoveObjectsAtIndexes:)];
         
+        //removeObjectsAtIndexes:
+        [AvoidCrash exchangeInstanceMethod:arrayMClass method1Sel:@selector(exchangeObjectAtIndex:withObjectAtIndex:) method2Sel:@selector(avoidCrashExchangeObjectAtIndex:withObjectAtIndex:)];
+        
     });
     
     
@@ -205,6 +208,19 @@
         
     }
 }
-
-
+//=================================================================
+//                    exchangeObjectAtIndex:withObjectAtIndex:
+//=================================================================
+#pragma mark - exchangeObjectAtIndex:withObjectAtIndex:
+- (void)avoidCrashExchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2 {
+    @try {
+        [self avoidCrashExchangeObjectAtIndex:idx1 withObjectAtIndex:idx2];
+    } @catch (NSException *exception) {
+        NSString *defaultToDo = AvoidCrashDefaultIgnore;
+        [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
+        
+    } @finally {
+        
+    }
+}
 @end

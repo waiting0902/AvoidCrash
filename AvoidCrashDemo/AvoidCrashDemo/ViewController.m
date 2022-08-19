@@ -128,6 +128,10 @@
    [array removeObjectsAtIndexes:set];
 }
 
+- (void)NSMutableArray_Test_exchangeObjectAtIndex {
+    NSMutableArray *array = @[@"chenfanfang", @"iOSDeveloper"].mutableCopy;
+    [array exchangeObjectAtIndex:0 withObjectAtIndex:2];
+}
 
 //=================================================================
 //                       NSDictionary_Test
@@ -408,6 +412,9 @@
     [self NSMutableArray_Test_RemoveObjectAtIndex];
     [self NSMutableArray_Test_InsertObjectAtIndex];
     [self NSMutableArray_Test_GetObjectsRange];
+    [self NSMutableArray_Test_removeObjectsAtIndexes];
+    [self NSMutableArray_Test_exchangeObjectAtIndex];
+    
     
     
     [self NSDictionary_Test_InstanceDictionary];
